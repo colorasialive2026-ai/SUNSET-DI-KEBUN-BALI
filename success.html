@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan QRIS Pembayaran Ulang</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{
+    background:#000;
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:#fff;
+    position:relative;
+}
+body::before{
+    content:'';
+    position:absolute;
+    width:900px;
+    height:900px;
+    background:radial-gradient(circle,rgba(255,255,255,.2),rgba(255,255,255,.05),transparent 70%);
+    animation:pulse 4s infinite;
+}
+@keyframes pulse{
+    0%,100%{transform:scale(1);opacity:.6}
+    50%{transform:scale(1.2);opacity:1}
+}
+
+/* Lingkaran neon */
+.ring{
+    position:absolute;
+    border:2px solid rgba(255,255,255,.2);
+    border-radius:50%;
+    animation:spin 20s linear infinite;
+}
+.r1{width:500px;height:500px;}
+.r2{width:650px;height:650px;animation-direction:reverse;}
+@keyframes spin{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+}
+
+.qris-box{
+    width:340px;
+    height:340px;
+    background:#fff;
+    border-radius:30px;
+    padding:20px;
+    z-index:2;
+    box-shadow:
+    0 0 20px #fff,
+    0 0 40px #fff,
+    0 0 80px rgba(255,255,255,.9),
+    0 0 120px rgba(255,255,255,.8);
+    animation:glow 2s infinite alternate, floating 4s ease-in-out infinite;
+}
+@keyframes glow{
+    from{transform:scale(1)}
+    to{transform:scale(1.03)}
+}
+@keyframes floating{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+}
+.qris-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+.title{
+    margin-top:45px;
+    font-size:30px;
+    font-weight:bold;
+    text-align:center;
+    z-index:2;
+    text-shadow:0 0 25px rgba(255,255,255,.9);
+    animation:blink 2s infinite;
+}
+@keyframes blink{
+    50%{opacity:.7}
+}
+.subtitle{
+    margin-top:15px;
+    font-size:18px;
+    opacity:.9;
+    text-align:center;
+    z-index:2;
+}
+.timer{
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+    color:#ffe600;
+    text-shadow:0 0 15px #ffe600;
+    z-index:2;
+}
+
+.admin-btn{
+    margin-top:25px;
+    display:none;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:50px;
+    font-weight:bold;
+    z-index:2;
+    box-shadow:0 0 25px rgba(37,211,102,.7);
+    animation:pulseBtn 2s infinite;
+}
+@keyframes pulseBtn{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.08)}
+    100%{transform:scale(1)}
+}
+
+/* Partikel */
+.particle,.star{
+    position:absolute;
+    border-radius:50%;
+}
+.particle{
+    width:5px;
+    height:5px;
+    background:#fff;
+    animation:float linear infinite;
+}
+.star{
+    width:3px;
+    height:3px;
+    background:#fff;
+    box-shadow:0 0 15px #fff;
+    animation:twinkle 2s infinite;
+}
+@keyframes float{
+    from{transform:translateY(100vh);opacity:0}
+    20%{opacity:1}
+    to{transform:translateY(-100vh);opacity:0}
+}
+@keyframes twinkle{
+    50%{opacity:.2;transform:scale(1.8)}
+}
+
+@media(max-width:500px){
+    .qris-box{width:270px;height:270px}
+    .title{font-size:24px}
+    .subtitle{font-size:16px;padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="ring r1"></div>
+<div class="ring r2"></div>
+
+<div class="qris-box">
+    <img src="qris-confirmasi.png" alt="QRIS">
+</div>
+
+<div class="title">SCAN QRIS PEMBAYARAN ULANG</div>
+
+<div class="subtitle">
+    Silakan scan QRIS di atas untuk melanjutkan pembayaran.
+</div>
+
+<div class="timer">
+    Halaman akan ditutup dalam <span id="count">60</span> detik
+</div>
+
+<a id="adminBtn"
+   class="admin-btn"
+   href="success.html.">
+   📱 Konfirmasi Admin
+</a>
+
+<script>
+for(let i=0;i<120;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDuration=(4+Math.random()*8)+'s';
+    p.style.animationDelay=Math.random()*5+'s';
+    document.body.appendChild(p);
+}
+for(let i=0;i<80;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*100+'%';
+    s.style.animationDelay=Math.random()*2+'s';
+    document.body.appendChild(s);
+}
+
+let time=60;
+const count=document.getElementById('count');
+const adminBtn=document.getElementById('adminBtn');
+
+const interval=setInterval(()=>{
+    time--;
+    count.innerHTML=time;
+
+    if(time===15){
+        adminBtn.style.display='inline-block';
+    }
+
+    if(time<=0){
+        clearInterval(interval);
+        location.href='about:blank';
+    }
+},1000);
+</script>
+</body>
+</html>
