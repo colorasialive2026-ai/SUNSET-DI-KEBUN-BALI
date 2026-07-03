@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<meta
+name="theme-color"
+content="#6F42C1">
+
+<meta
+name="description"
+content="Official Ticketing Sunset di Kebun">
+
+<title>
+
+SUNSET DI KEBUN
+|
+FORM PEMESANAN
+
+</title>
+
+<link rel="preload" href="logo.webp" as="image">
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =======================================
+RESET
+======================================= */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:
+
+linear-gradient(
+180deg,
+#8F6CFF 0%,
+#7446D8 100%
+);
+
+color:#222;
+
+overflow-x:hidden;
+
+padding-bottom:140px;
+
+}
+
+/* =======================================
+CONTAINER
+======================================= */
+
+.container{
+
+width:100%;
+
+max-width:920px;
+
+margin:auto;
+
+padding:18px;
+
+}
+
+/* =======================================
+LINK
+======================================= */
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/* =======================================
+IMAGE
+======================================= */
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+/* =======================================
+BUTTON
+======================================= */
+
+button{
+
+font-family:inherit;
+
+cursor:pointer;
+
+border:none;
+
+}
+
+/* =======================================
+INPUT
+======================================= */
+
+input,
+select,
+textarea{
+
+font-family:inherit;
+
+outline:none;
+
+}
+
+/* =======================================
+SCROLLBAR
+======================================= */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#5B21B6;
+
+border-radius:999px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#EEE;
+
+}
+
+/* =======================================
+HEADER
+======================================= */
+
+.header{
+
+background:#FFFFFF;
+
+border-radius:24px;
+
+padding:18px 22px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:
+
+0 16px 40px rgba(0,0,0,.18);
+
+margin-top:10px;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+.logo img{
+
+width:58px;
+
+height:58px;
+
+object-fit:contain;
+
+}
+
+.logo h1{
+
+font-size:28px;
+
+font-weight:800;
+
+line-height:1.1;
+
+}
+
+.logo p{
+
+font-size:13px;
+
+color:#666;
+
+margin-top:2px;
+
+}
+
+.country{
+
+background:#F4F4F4;
+
+padding:10px 16px;
+
+border-radius:14px;
+
+font-weight:700;
+
+}
+
+/* =======================================
+HERO
+======================================= */
+
+.hero{
+
+margin-top:20px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+position:relative;
+
+box-shadow:
+
+0 18px 45px rgba(0,0,0,.22);
+
+}
+
+.hero img{
+
+width:100%;
+
+display:block;
+
+}
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+to top,
+
+rgba(0,0,0,.68),
+
+rgba(0,0,0,.15)
+
+);
+
+}
+
+.hero-content{
+
+position:absolute;
+
+left:24px;
+
+bottom:24px;
+
+color:white;
+
+}
+
+.hero-content h2{
+
+font-size:36px;
+
+font-weight:800;
+
+}
+
+.hero-content p{
+
+margin-top:8px;
+
+font-size:15px;
+
+opacity:.95;
+
+}
+
+  /* =======================================
+SECTION TITLE
+======================================= */
+
+.page-title{
+
+margin-top:24px;
+
+background:#FFD54F;
+
+border:4px solid #1F1F1F;
+
+border-radius:24px;
+
+padding:22px;
+
+text-align:center;
+
+box-shadow:0 14px 32px rgba(0,0,0,.18);
+
+}
+
+.page-title h3{
+
+font-size:30px;
+
+font-weight:800;
+
+color:#222;
+
+}
+
+.page-title p{
+
+margin-top:8px;
+
+font-size:15px;
+
+color:#555;
+
+line-height:1.6;
+
+}
+
+/* =======================================
+CARD
+======================================= */
+
+.card{
+
+background:#FFFFFF;
+
+border:3px solid #202020;
+
+border-radius:24px;
+
+padding:24px;
+
+margin-top:22px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+animation:fadeUp .45s ease;
+
+}
+
+.card-title{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:18px;
+
+font-size:24px;
+
+font-weight:800;
+
+color:#5B21B6;
+
+}
+
+/* =======================================
+SUMMARY
+======================================= */
+
+.summary-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 0;
+
+border-bottom:1px dashed #DDDDDD;
+
+font-size:15px;
+
+}
+
+.summary-row:last-child{
+
+border-bottom:none;
+
+}
+
+.summary-total{
+
+font-size:32px;
+
+font-weight:800;
+
+color:#5B21B6;
+
+}
+
+/* =======================================
+FORM
+======================================= */
+
+.form-group{
+
+margin-top:18px;
+
+}
+
+.form-group label{
+
+display:block;
+
+font-weight:700;
+
+margin-bottom:8px;
+
+font-size:15px;
+
+}
+
+input,
+
+select,
+
+textarea{
+
+width:100%;
+
+padding:16px;
+
+border:2px solid #E5E7EB;
+
+border-radius:16px;
+
+font-size:15px;
+
+transition:.25s;
+
+background:#FFFFFF;
+
+}
+
+textarea{
+
+min-height:110px;
+
+resize:vertical;
+
+}
+
+input:focus,
+
+select:focus,
+
+textarea:focus{
+
+border-color:#6D28D9;
+
+box-shadow:0 0 0 4px rgba(109,40,217,.15);
+
+}
+
+/* =======================================
+CHECKBOX
+======================================= */
+
+.check{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:12px;
+
+margin-top:18px;
+
+}
+
+.check input{
+
+width:20px;
+
+height:20px;
+
+margin-top:3px;
+
+}
+
+.check label{
+
+font-size:14px;
+
+line-height:1.7;
+
+color:#555;
+
+}
+
+/* =======================================
+INFO BOX
+======================================= */
+
+.notice{
+
+margin-top:22px;
+
+padding:18px;
+
+background:#F8F4FF;
+
+border-left:6px solid #6D28D9;
+
+border-radius:18px;
+
+font-size:14px;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+/* =======================================
+BOTTOM BAR
+======================================= */
+
+.bottom{
+
+position:fixed;
+
+left:16px;
+
+right:16px;
+
+bottom:16px;
+
+background:#FFFFFF;
+
+border-radius:24px;
+
+padding:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 20px 45px rgba(0,0,0,.22);
+
+z-index:999;
+
+}
+
+.bottom-price{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.bottom-price span{
+
+font-size:13px;
+
+color:#666;
+
+}
+
+.bottom-price strong{
+
+font-size:28px;
+
+color:#5B21B6;
+
+font-weight:800;
+
+margin-top:4px;
+
+}
+
+.btn{
+
+background:linear-gradient(135deg,#6D28D9,#7C3AED);
+
+color:#FFFFFF;
+
+padding:16px 28px;
+
+border-radius:16px;
+
+font-size:15px;
+
+font-weight:700;
+
+transition:.25s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+.btn:disabled{
+
+opacity:.45;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+/* =======================================
+LOADING
+======================================= */
+
+#loading{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.82);
+
+backdrop-filter:blur(4px);
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+color:#FFFFFF;
+
+font-size:20px;
+
+font-weight:700;
+
+z-index:99999;
+
+}
+
+#loading::before{
+
+content:"";
+
+width:58px;
+
+height:58px;
+
+border-radius:50%;
+
+border:6px solid rgba(255,255,255,.25);
+
+border-top-color:#FFD54F;
+
+animation:spin .9s linear infinite;
+
+margin-bottom:20px;
+
+}
+
+@keyframes spin{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(24px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+/* =======================================
+RESPONSIVE
+======================================= */
+
+@media (max-width:768px){
+
+.container{
+
+padding:14px;
+
+}
+
+.header{
+
+padding:16px;
+
+}
+
+.logo img{
+
+width:50px;
+
+height:50px;
+
+}
+
+.logo h1{
+
+font-size:22px;
+
+}
+
+.country{
+
+padding:8px 12px;
+
+font-size:13px;
+
+}
+
+.hero-content{
+
+left:18px;
+
+bottom:18px;
+
+}
+
+.hero-content h2{
+
+font-size:28px;
+
+}
+
+.hero-content p{
+
+font-size:14px;
+
+}
+
+.page-title{
+
+padding:18px;
+
+}
+
+.page-title h3{
+
+font-size:24px;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+.card-title{
+
+font-size:20px;
+
+}
+
+.summary-row{
+
+font-size:14px;
+
+}
+
+.summary-total{
+
+font-size:26px;
+
+}
+
+.bottom{
+
+left:12px;
+
+right:12px;
+
+bottom:12px;
+
+padding:14px;
+
+flex-direction:column;
+
+gap:14px;
+
+align-items:stretch;
+
+}
+
+.bottom-price{
+
+text-align:center;
+
+}
+
+.bottom-price strong{
+
+font-size:26px;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+}
+
+/* =======================================
+ANIMASI
+======================================= */
+
+.card{
+
+animation:fadeUp .5s ease;
+
+}
+
+.card:nth-child(2){
+
+animation-delay:.05s;
+
+}
+
+.card:nth-child(3){
+
+animation-delay:.1s;
+
+}
+
+.card:nth-child(4){
+
+animation-delay:.15s;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<!-- =======================================
+HEADER
+======================================= -->
+
+<header class="header">
+
+<div class="logo">
+
+<img src="logo.webp" alt="Logo" loading="eager" fetchpriority="high" decoding="async">
+
+<div>
+
+<h1>Sunset di Kebun</h1>
+
+<p>Official Ticketing</p>
+
+</div>
+
+</div>
+
+<div class="country">
+
+🇮🇩 ID
+
+</div>
+
+</header>
+
+<!-- =======================================
+HERO
+======================================= -->
+
+<section class="hero">
+
+<img src="lineup.png" alt="Sunset di Kebun" loading="lazy" decoding="async">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h2>Form Pemesanan</h2>
+
+<p>
+
+Lengkapi data pemesan
+untuk melanjutkan pembayaran.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =======================================
+TITLE
+======================================= -->
+
+<section class="page-title">
+
+<h3>
+
+📝 Form Pemesanan Tiket
+
+</h3>
+
+<p>
+
+Pastikan seluruh data
+diisi dengan benar.
+
+</p>
+
+</section>
+
+<!-- =======================================
+RINGKASAN PESANAN
+======================================= -->
+
+<section class="card">
+
+<div class="card-title">
+
+🎫 Ringkasan Pesanan
+
+</div>
+
+<div class="summary-row">
+
+<span>
+
+Jenis Tiket
+
+</span>
+
+<strong id="jenisTiket">
+
+-
+
+</strong>
+
+</div>
+
+<div id="detailTiket">
+
+</div>
+
+<div class="summary-row">
+
+<span>
+
+Jumlah Tiket
+
+</span>
+
+<strong id="jumlahTiket">
+
+0
+
+</strong>
+
+</div>
+
+<div class="summary-row">
+
+<span>
+
+Total Pembayaran
+
+</span>
+
+<strong
+
+id="totalBayar"
+
+class="summary-total">
+
+Rp 0
+
+</strong>
+
+</div>
+
+</section>
+
+<!-- =======================================
+FORM DATA PEMESAN
+======================================= -->
+
+<section class="card">
+
+<div class="card-title">
+
+👤 Data Pemesan
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Nama Lengkap *
+
+</label>
+
+<input
+
+type="text"
+
+id="nama"
+
+placeholder="Masukkan nama lengkap">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Jenis Identitas *
+
+</label>
+
+<select id="identitas">
+
+<option value="">
+
+Pilih Identitas
+
+</option>
+
+<option>KTP</option>
+
+<option>SIM</option>
+
+<option>Paspor</option>
+
+<option>Kartu Pelajar</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Nomor Identitas *
+
+</label>
+
+<input
+
+id="nomorId"
+
+placeholder="Masukkan nomor identitas">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+E-mail *
+
+</label>
+
+<input
+
+id="email"
+
+type="email"
+
+placeholder="contoh@email.com">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+No. WhatsApp *
+
+</label>
+
+<input
+
+id="wa"
+
+placeholder="08xxxxxxxxxx">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Alamat *
+
+</label>
+
+<textarea
+
+id="alamat"
+
+placeholder="Masukkan alamat lengkap">
+
+</textarea>
+
+</div>
+
+</section>
+<!-- =======================================
+PERSETUJUAN
+======================================= -->
+
+<section class="card">
+
+<div class="card-title">
+
+✅ Persetujuan
+
+</div>
+
+<div class="check">
+
+<input
+type="checkbox"
+id="setuju1">
+
+<label for="setuju1">
+
+Saya menyatakan seluruh data
+yang saya isi adalah benar.
+
+</label>
+
+</div>
+
+<div class="check">
+
+<input
+type="checkbox"
+id="setuju2">
+
+<label for="setuju2">
+
+Saya telah membaca dan
+menyetujui syarat serta
+ketentuan acara.
+
+</label>
+
+</div>
+
+<div class="notice">
+
+<strong>Informasi</strong>
+
+<br><br>
+
+• Tiket yang telah dibeli tidak dapat dibatalkan.
+
+<br>
+
+• Pastikan alamat email dan nomor WhatsApp benar.
+
+<br>
+
+• E-ticket akan dikirim setelah pembayaran berhasil.
+
+</div>
+
+</section>
+
+</div>
+
+<!-- =======================================
+BOTTOM BAR
+======================================= -->
+
+<div class="bottom">
+
+<div class="bottom-price">
+
+<span>
+
+Total Pembayaran
+
+</span>
+
+<strong id="bottomTotal">
+
+Rp 0
+
+</strong>
+
+</div>
+
+<button
+
+id="lanjut"
+
+class="btn">
+
+LANJUT KE PEMBAYARAN
+
+</button>
+
+</div>
+
+<!-- =======================================
+LOADING
+======================================= -->
+
+<div id="loading">
+
+<div>
+
+Sedang Memproses...
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+AMBIL DATA LOCAL STORAGE
+========================================== */
+
+const items = JSON.parse(
+
+localStorage.getItem("checkout_items")
+
+|| "[]"
+
+);
+
+if(items.length===0){
+window.location.href='tiket.html';
+}
+
+const total = Number(
+
+localStorage.getItem("totalPembayaran")
+
+|| 0
+
+);
+
+const jumlah = Number(
+
+localStorage.getItem("jumlahTiket")
+
+|| 0
+
+);
+
+/* ==========================================
+FORMAT RUPIAH
+========================================== */
+
+function rupiah(angka){
+
+return "Rp " +
+
+angka.toLocaleString("id-ID");
+
+}
+
+/* ==========================================
+RINGKASAN PESANAN
+========================================== */
+
+document.getElementById(
+
+"jumlahTiket"
+
+).textContent = jumlah;
+
+document.getElementById(
+
+"totalBayar"
+
+).textContent = rupiah(total);
+
+document.getElementById(
+
+"bottomTotal"
+
+).textContent = rupiah(total);
+
+/* ==========================================
+DETAIL TIKET
+========================================== */
+
+let detailHTML = "";
+
+function escapeHtml(str){return String(str).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+
+items.forEach(function(item){
+
+const subtotal =
+
+item.qty * item.harga;
+
+detailHTML +=
+
+`
+
+<div class="summary-row">
+
+<span>
+
+${escapeHtml(item.nama)}
+
+(${item.qty})
+
+</span>
+
+<strong>
+
+${rupiah(subtotal)}
+
+</strong>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+
+"detailTiket"
+
+).innerHTML = detailHTML;
+
+/* ==========================================
+JENIS TIKET
+========================================== */
+
+const jenis =
+
+items
+
+.map(
+
+i =>
+
+`${i.nama} (${i.qty})`
+
+)
+
+.join(", ");
+
+document.getElementById(
+
+"jenisTiket"
+
+).textContent =
+
+jenis || "-";
+
+/* ==========================================
+BUTTON LANJUT
+========================================== */
+
+const lanjutBtn=document.getElementById("lanjut");
+lanjutBtn.onclick = function(){
+lanjutBtn.disabled=true;
+
+const wajib = [
+
+"nama",
+
+"identitas",
+
+"nomorId",
+
+"email",
+
+"wa",
+
+"alamat"
+
+];
+
+for(const id of wajib){
+
+const el =
+
+document.getElementById(id);
+
+if(!el.value.trim()){
+alert("Mohon lengkapi seluruh data.");
+el.focus();
+lanjutBtn.disabled=false;
+return;
+}
+
+}
+
+
+const namaEl=document.getElementById('nama');
+const identitasEl=document.getElementById('identitas');
+const nomorIdEl=document.getElementById('nomorId');
+const emailEl=document.getElementById('email');
+const waEl=document.getElementById('wa');
+const alamatEl=document.getElementById('alamat');
+
+if(!/\S+@\S+\.\S+/.test(emailEl.value)){
+alert('Email tidak valid.');
+lanjutBtn.disabled=false;
+return;
+}
+
+if(!/^08[0-9]{8,13}$/.test(waEl.value)){
+alert('Nomor WhatsApp tidak valid.');
+lanjutBtn.disabled=false;
+return;
+}
+
+if(
+
+!document.getElementById("setuju1").checked ||
+
+!document.getElementById("setuju2").checked
+
+){
+
+alert(
+
+"Centang seluruh persetujuan."
+
+);
+
+lanjutBtn.disabled=false;
+return;
+
+}
+
+/* ==========================================
+SIMPAN LOCAL STORAGE
+========================================== */
+
+localStorage.setItem(
+
+"nama",
+
+namaEl.value
+
+);
+
+localStorage.setItem(
+
+"identitas",
+
+identitasEl.value
+
+);
+
+localStorage.setItem(
+
+"nomorIdentitas",
+
+nomorIdEl.value
+
+);
+
+localStorage.setItem(
+
+"email",
+
+emailEl.value
+
+);
+
+localStorage.setItem(
+
+"wa",
+
+waEl.value
+
+);
+
+localStorage.setItem(
+
+"alamat",
+
+alamatEl.value
+
+);
+
+localStorage.setItem(
+"jenisTiket",
+jenis
+);
+
+localStorage.setItem(
+"jumlahTiket",
+jumlah
+);
+
+localStorage.setItem(
+"totalPembayaran",
+total
+);
+
+
+  /* ==========================================
+LOADING
+========================================== */
+
+document.getElementById("loading").style.display="flex";
+
+setTimeout(function(){
+window.location.replace("qris.html");
+},2000);
+
+};
+
+/* ==========================================
+SELESAI
+========================================== */
+
+</script>
+
+
+<script>
+function saveOrder(d){localStorage.setItem('ticketOrder',JSON.stringify(d));}
+function loadOrder(){try{return JSON.parse(localStorage.getItem('ticketOrder'))||{};}catch(e){return {};}}
+</script>
+
+</body>
+
+</html>
