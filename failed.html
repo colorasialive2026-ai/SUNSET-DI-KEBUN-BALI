@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pembayaran Gagal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Fredoka',sans-serif;
+}
+
+body{
+    background:#c8a7e8;
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* Background Animation */
+
+.cloud{
+    position:absolute;
+    background:white;
+    border-radius:100px;
+    opacity:.8;
+    animation:cloudMove linear infinite;
+}
+
+.cloud:before,
+.cloud:after{
+    content:'';
+    position:absolute;
+    background:white;
+    border-radius:50%;
+}
+
+.cloud1{
+    width:120px;
+    height:40px;
+    top:10%;
+    left:-150px;
+    animation-duration:25s;
+}
+
+.cloud1:before{
+    width:50px;
+    height:50px;
+    top:-20px;
+    left:15px;
+}
+
+.cloud1:after{
+    width:60px;
+    height:60px;
+    top:-30px;
+    right:15px;
+}
+
+.cloud2{
+    width:180px;
+    height:55px;
+    bottom:15%;
+    left:-250px;
+    animation-duration:35s;
+}
+
+.cloud2:before{
+    width:60px;
+    height:60px;
+    top:-20px;
+    left:30px;
+}
+
+.cloud2:after{
+    width:70px;
+    height:70px;
+    top:-35px;
+    right:20px;
+}
+
+@keyframes cloudMove{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(calc(100vw + 400px));
+    }
+}
+
+/* Floating Stars */
+
+.star{
+    position:absolute;
+    color:#ffd500;
+    font-size:25px;
+    animation:float 4s ease-in-out infinite;
+}
+
+.star:nth-child(1){
+    top:15%;
+    left:10%;
+}
+.star:nth-child(2){
+    top:20%;
+    right:15%;
+    animation-delay:1s;
+}
+.star:nth-child(3){
+    bottom:20%;
+    left:15%;
+    animation-delay:2s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* Card */
+
+.card{
+    width:90%;
+    max-width:500px;
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(20px);
+    border-radius:35px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+    border:3px solid rgba(255,255,255,.5);
+    animation:cardUp 1s ease;
+}
+
+@keyframes cardUp{
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.icon{
+    width:120px;
+    height:120px;
+    margin:auto;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:60px;
+    color:#ff5b5b;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    animation:shake 1.5s infinite;
+}
+
+@keyframes shake{
+    0%,100%{
+        transform:rotate(0);
+    }
+    25%{
+        transform:rotate(-10deg);
+    }
+    75%{
+        transform:rotate(10deg);
+    }
+}
+
+h1{
+    margin-top:25px;
+    font-size:38px;
+    color:#333;
+}
+
+p{
+    margin-top:15px;
+    color:#444;
+    line-height:1.8;
+}
+
+.status{
+    margin-top:25px;
+    background:white;
+    padding:15px;
+    border-radius:20px;
+    color:#ff5b5b;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+button{
+    border:none;
+    padding:15px 30px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.retry{
+    background:#00c97d;
+    color:white;
+}
+
+.retry:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,201,125,.4);
+}
+
+.home{
+    background:#ff9d00;
+    color:white;
+}
+
+.home:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(255,157,0,.4);
+}
+
+.footer{
+    margin-top:30px;
+    color:#555;
+    font-size:13px;
+}
+
+@media(max-width:600px){
+    .card{
+        padding:35px 25px;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<div class="star">✨</div>
+<div class="star">⭐</div>
+<div class="star">✨</div>
+
+<div class="card">
+
+    <div class="icon">
+        ✕
+    </div>
+
+    <h1>Pembayaran Gagal</h1>
+
+    <p>
+        Yahh... transaksi kamu belum berhasil diproses.
+        Jangan khawatir, tiketmu masih bisa dipesan kembali.
+    </p>
+
+    <div class="status">
+        STATUS : FAILED
+    </div>
+
+    <div class="buttons">
+
+        <button class="retry"
+            onclick="window.location.href='konfirmasi.html'">
+            🔄 Coba Lagi
+        </button>
+
+        <button class="home"
+            onclick="closePage()">
+            🏠 Kembali ke Beranda
+        </button>
+
+    </div>
+
+    <div class="footer">
+        Sunset di Kebun • Kebun Raya Bogor
+    </div>
+
+</div>
+
+<script>
+function closePage() {
+    window.open('', '_self');
+    window.close();
+
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 300);
+}
+</script>
+
+</body>
+</html>
