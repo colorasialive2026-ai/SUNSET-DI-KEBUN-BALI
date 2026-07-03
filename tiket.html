@@ -14,13 +14,13 @@ content="#6f42c1">
 
 <meta
 name="description"
-content="Official Ticketing Sunset di Kebun">
+content="Official Package Sunset di Kebun">
 
 <title>
 
 Sunset di Kebun
 |
-Tambahan Tiket
+Sunset People Package
 
 </title>
 
@@ -420,7 +420,7 @@ background:#FFD84D;
 BADGE
 =============================== */
 
-.badge{
+.badge{z-index:10;
 
 position:absolute;
 
@@ -446,7 +446,7 @@ font-weight:700;
 HEADER KARTU
 =============================== */
 
-.ticket-header{
+.ticket-header{flex-wrap:wrap;gap:10px;
 
 display:flex;
 
@@ -886,29 +886,16 @@ padding:14px 18px;
 SELESAI CSS
 =============================== */
 
-</style>
+@keyframes pulse{50%{opacity:.45}}</style>
 
 
 <style>
-.urgency{background:#fff;border-radius:18px;padding:14px;margin:20px 0;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-.progress{height:10px;background:#ddd;border-radius:99px;overflow:hidden}.bar{height:100%;width:88%;background:#ff5722}
-.glow{animation:glow 1.2s infinite}
-@keyframes glow{50%{box-shadow:0 0 20px #ff0,0 0 30px #ff9800;transform:scale(1.03)}}
-.live{position:fixed;left:15px;bottom:110px;background:#222;color:#fff;padding:10px 14px;border-radius:12px;z-index:9999}
 </style>
 </head>
 <body>
 
 
-<div class="container"><div class="urgency">
-<div id='left'>🔥 Tersisa 12 tiket lagi</div>
-<div id='view'>👀 31 orang sedang melihat halaman</div>
-<div>⏳ Promo berakhir: <span id='cd'></span></div>
-<div>🎫 Progress tiket terjual<div class='progress'><div class='bar'></div></div></div>
-</div>
-
-
-<!-- ========================= -->
+<div class="container"><!-- ========================= -->
 <!-- HEADER -->
 <!-- ========================= -->
 
@@ -922,7 +909,7 @@ SELESAI CSS
 
 <h1>Sunset di Kebun</h1>
 
-<p>Official Ticketing</p>
+<p>Official Package</p>
 
 </div>
 
@@ -948,7 +935,7 @@ SELESAI CSS
 
 <div class="hero-content">
 
-<h2>Tambahan Tiket</h2>
+<h2>Sunset People Package</h2>
 
 <p>
 
@@ -969,14 +956,13 @@ Conservation and Culture Movement
 
 <h3>
 
-🎫 Tambahan Tiket
+🎫 Sunset People Package
 
 </h3>
 
 <p>
 
-Pilih kategori tiket yang tersedia
-untuk melanjutkan pembelian.
+Pilih paket merchandise yang sudah termasuk Tiket Reguler Sunset di Kebun.
 
 </p>
 
@@ -1002,11 +988,11 @@ BEST SELLER
 
 <div class="ticket-name">
 
-2-Day Pass Presale
+Terra Bag + Tiket
 
 </div>
 
-<div class="status">
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
 
 ON SALE
 
@@ -1026,7 +1012,7 @@ Kuota terbatas.
 
 <div class="price">
 
-Rp280.000
+Rp439.000
 
 <small>
 
@@ -1082,11 +1068,11 @@ id="q0">
 
 <div class="ticket-name">
 
-2-Day Pass Regular
+Satchel Bag + Tiket
 
 </div>
 
-<div class="status">
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
 
 READY
 
@@ -1104,7 +1090,7 @@ Akses festival selama dua hari.
 
 <div class="price">
 
-Rp375.000
+Rp464.000
 
 <small>
 
@@ -1160,11 +1146,11 @@ id="q1">
 
 <div class="ticket-name">
 
-Regular
+Treverse Bag + Tiket
 
 </div>
 
-<div class="status">
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
 
 READY
 
@@ -1183,7 +1169,7 @@ Akses area festival.
 
 <div class="price">
 
-Rp190.000
+Rp549.000
 
 <small>
 
@@ -1235,21 +1221,13 @@ id="q2">
 
 <div class="ticket-card">
 
-<div class="badge">
 
-PROMO
-
-</div>
 
 <div class="ticket-header">
 
-<div class="ticket-name">
+<div class="ticket-name">Paket Promo</div>
 
-Intimate Couple
-
-</div>
-
-<div class="status">
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
 
 LIMITED
 
@@ -1323,13 +1301,9 @@ id="q3">
 
 <div class="ticket-header">
 
-<div class="ticket-name">
+<div class="ticket-name">VIP Access</div>
 
-VIP
-
-</div>
-
-<div class="status">
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
 
 VERY LIMITED
 
@@ -1339,9 +1313,7 @@ VERY LIMITED
 
 <div class="ticket-desc">
 
-Area VIP.
-
-Akses jalur khusus.
+- TAMBAHAN TIKET VIP 30 TIX<br>- Include: 1 tiket VIP Sunset di Kebun, 1 tiket masuk perorangan Kebun Raya Bali, 1 Bean Bag, 1 Plant Heroes, area nonton khusus VIP
 
 </div>
 
@@ -1353,7 +1325,7 @@ Rp450.000
 
 <small>
 
-VIP Access
+ Access
 
 </small>
 
@@ -1405,19 +1377,19 @@ id="q4">
 
 <h3 class="info-title">
 
-Informasi Tiket
+Syarat & Ketentuan
 
 </h3>
 
 <ul class="info-list">
 
-<li>✅ Harga sudah termasuk tiket masuk Kebun Raya Bogor.</li>
+<li>✅ Harga sudah termasuk tiket masuk Kebun Raya Bali.</li>
 
-<li>✅ Belum termasuk platform fee, admin fee, dan pajak hiburan.</li>
+<li>✅ Khusus pembelian melalui Shopee (Artch Official Shop).</li>
 
-<li>✅ Tiket yang sudah dibeli tidak dapat dibatalkan.</li>
+<li>✅ Tiket yang diterima berbentuk Hard Copy/Fisik.</li>
 
-<li>✅ Kuota tiket terbatas.</li>
+<li>✅ Promo berakhir 18 Juli 2026. Kuota terbatas.</li>
 
 </ul>
 
@@ -1464,15 +1436,7 @@ BELI TIKET
 </div>
 <script>
 
-const ticketList = [
-
-["2-Day Pass Presale",280000],
-["2-Day Pass Regular",375000],
-["Regular",190000],
-["Intimate Couple",175000],
-["VIP",450000]
-
-];
+const ticketList=[["Terra Bag + Tiket",439000],["Satchel Bag + Tiket",464000],["Treverse Bag + Tiket",549000],["Paket Promo",175000],["VIP Access",450000]];
 
 const cart = {};
 
@@ -1640,15 +1604,6 @@ location.href="form.html";
 
 };
 
-
-const btn=document.getElementById('checkout');btn.classList.add('glow');
-let left=12,v=31,s=7200;
-setInterval(()=>{v=28+Math.floor(Math.random()*20);view.textContent='👀 '+v+' orang sedang melihat halaman';},5000);
-setInterval(()=>{if(left>3&&Math.random()<0.3)left--;document.getElementById('left').textContent='🔥 Tersisa '+left+' tiket lagi';},15000);
-setInterval(()=>{let h=Math.floor(s/3600),m=Math.floor((s%3600)/60),d=s%60;cd.textContent=[h,m,d].map(x=>String(x).padStart(2,'0')).join(':');if(s>0)s--;},1000);
-const names=['Andi','Rina','Budi','Salsa'];const cities=['Jakarta','Bandung','Surabaya','Bogor'];
-const live=document.createElement('div');live.className='live';document.body.appendChild(live);
-setInterval(()=>{live.textContent='🔴 '+names[Math.floor(Math.random()*names.length)]+' dari '+cities[Math.floor(Math.random()*cities.length)]+' baru membeli '+(1+Math.floor(Math.random()*2))+' tiket';},7000);
 
 </script>
 
