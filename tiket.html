@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta
+name="theme-color"
+content="#6f42c1">
+
+<meta
+name="description"
+content="Official Package Sunset di Kebun">
+
+<title>
+
+Sunset di Kebun
+|
+Sunset People Package
+
+</title>
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ===============================
+RESET
+=============================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#7f58d6;
+
+background-image:
+
+linear-gradient(
+180deg,
+#8d6af0 0%,
+#7647d4 50%,
+#673ab7 100%
+);
+
+color:#222;
+
+overflow-x:hidden;
+
+padding-bottom:120px;
+
+}
+
+/* ===============================
+CONTAINER
+=============================== */
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+padding:18px;
+
+}
+
+/* ===============================
+LINK
+=============================== */
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/* ===============================
+IMAGE
+=============================== */
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* ===============================
+BUTTON
+=============================== */
+
+button{
+
+font-family:inherit;
+
+}
+
+/* ===============================
+SCROLLBAR
+=============================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#5b21b6;
+
+border-radius:99px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#ddd;
+
+}
+
+/* ===============================
+HEADER
+=============================== */
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:#ffffff;
+
+border-radius:22px;
+
+padding:16px 20px;
+
+margin-top:14px;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+.logo img{
+
+width:58px;
+
+height:58px;
+
+object-fit:contain;
+
+}
+
+.logo h1{
+
+font-size:28px;
+
+font-weight:800;
+
+line-height:1.1;
+
+}
+
+.logo p{
+
+font-size:13px;
+
+color:#777;
+
+}
+
+.country{
+
+background:#F4F4F4;
+
+padding:10px 15px;
+
+border-radius:14px;
+
+font-weight:700;
+
+}
+
+/* ===============================
+HERO
+=============================== */
+
+.hero{
+
+margin-top:20px;
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:30px;
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.25);
+
+}
+
+.hero img{
+
+width:100%;
+
+display:block;
+
+}
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+to top,
+
+rgba(0,0,0,.65),
+
+rgba(0,0,0,.10)
+
+);
+
+}
+
+.hero-content{
+
+position:absolute;
+
+left:24px;
+
+bottom:24px;
+
+color:white;
+
+}
+
+.hero-content h2{
+
+font-size:36px;
+
+font-weight:800;
+
+}
+
+.hero-content p{
+
+margin-top:8px;
+
+font-size:15px;
+
+opacity:.95;
+
+}
+
+ /* ===============================
+JUDUL HALAMAN
+=============================== */
+
+.section-title{
+
+margin-top:24px;
+
+background:#FFD84D;
+
+border:4px solid #222;
+
+border-radius:24px;
+
+padding:20px;
+
+text-align:center;
+
+box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+}
+
+.section-title h3{
+
+font-size:30px;
+
+font-weight:800;
+
+color:#222;
+
+}
+
+.section-title p{
+
+margin-top:8px;
+
+font-size:15px;
+
+color:#444;
+
+line-height:1.6;
+
+}
+
+/* ===============================
+GRID TIKET
+=============================== */
+
+.ticket-grid{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+margin-top:24px;
+
+}
+
+/* ===============================
+KARTU TIKET
+=============================== */
+
+.ticket-card{
+
+background:#FFFDF7;
+
+border:3px solid #222;
+
+border-radius:24px;
+
+padding:22px;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.30s;
+
+box-shadow:0 14px 30px rgba(0,0,0,.15);
+
+}
+
+.ticket-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 24px 45px rgba(0,0,0,.25);
+
+}
+
+.ticket-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:8px;
+
+background:#FFD84D;
+
+}
+
+/* ===============================
+BADGE
+=============================== */
+
+.badge{
+
+position:absolute;
+
+top:18px;
+
+right:18px;
+
+background:#EF4444;
+
+color:white;
+
+padding:7px 14px;
+
+border-radius:999px;
+
+font-size:12px;
+
+font-weight:700;
+
+}
+
+/* ===============================
+HEADER KARTU
+=============================== */
+
+.ticket-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:16px;
+
+}
+
+.ticket-name{
+
+font-size:24px;
+
+font-weight:800;
+
+line-height:1.2;
+
+}
+
+.status{
+
+background:#16A34A;
+
+color:white;
+
+padding:6px 12px;
+
+border-radius:999px;
+
+font-size:12px;
+
+font-weight:700;
+
+}
+
+/* ===============================
+DESKRIPSI
+=============================== */
+
+.ticket-desc{
+
+color:#555;
+
+font-size:14px;
+
+line-height:1.8;
+
+margin-bottom:20px;
+
+}
+
+/* ===============================
+HARGA
+=============================== */
+
+.ticket-footer{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.price{
+
+font-size:34px;
+
+font-weight:800;
+
+color:#5B21B6;
+
+}
+
+.price small{
+
+display:block;
+
+font-size:13px;
+
+font-weight:500;
+
+color:#777;
+
+margin-top:4px;
+
+}
+
+/* ===============================
+BUTTON
+=============================== */
+
+.select-btn{
+
+background:#5B21B6;
+
+color:white;
+
+border:none;
+
+padding:14px 20px;
+
+border-radius:14px;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.select-btn:hover{
+
+background:#49209b;
+
+}
+
+.qty{
+
+display:none;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.qty button{
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+border-radius:12px;
+
+background:#5B21B6;
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+.qty div{
+
+font-size:20px;
+
+font-weight:700;
+
+min-width:28px;
+
+text-align:center;
+
+}
+
+ /* ===============================
+INFORMASI TIKET
+=============================== */
+
+.info-box{
+
+margin-top:24px;
+
+background:#ffffff;
+
+border:3px solid #222;
+
+border-radius:24px;
+
+padding:22px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+}
+
+.info-title{
+
+font-size:24px;
+
+font-weight:800;
+
+margin-bottom:14px;
+
+color:#222;
+
+}
+
+.info-list{
+
+list-style:none;
+
+}
+
+.info-list li{
+
+padding:10px 0;
+
+font-size:15px;
+
+color:#555;
+
+display:flex;
+
+gap:10px;
+
+align-items:flex-start;
+
+border-bottom:1px dashed #ddd;
+
+}
+
+.info-list li:last-child{
+
+border-bottom:none;
+
+}
+
+/* ===============================
+CHECKOUT BAR
+=============================== */
+
+.checkout-bar{
+
+position:fixed;
+
+left:16px;
+
+right:16px;
+
+bottom:16px;
+
+background:#ffffff;
+
+border-radius:22px;
+
+padding:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 18px 45px rgba(0,0,0,.25);
+
+z-index:999;
+
+}
+
+.checkout-info{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.checkout-info span:first-child{
+
+font-size:14px;
+
+color:#666;
+
+}
+
+.total{
+
+font-size:30px;
+
+font-weight:800;
+
+color:#5B21B6;
+
+margin-top:4px;
+
+}
+
+.checkout-btn{
+
+border:none;
+
+background:#5B21B6;
+
+color:#fff;
+
+padding:16px 24px;
+
+border-radius:16px;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.checkout-btn:hover{
+
+background:#49209b;
+
+transform:translateY(-2px);
+
+}
+
+.checkout-btn:disabled{
+
+opacity:.45;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+/* ===============================
+ANIMASI
+=============================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+.ticket-card{
+
+animation:fadeUp .5s ease both;
+
+}
+
+.ticket-card:nth-child(2){
+
+animation-delay:.08s;
+
+}
+
+.ticket-card:nth-child(3){
+
+animation-delay:.16s;
+
+}
+
+.ticket-card:nth-child(4){
+
+animation-delay:.24s;
+
+}
+
+.ticket-card:nth-child(5){
+
+animation-delay:.32s;
+
+}
+
+/* ===============================
+RESPONSIVE
+=============================== */
+
+@media (max-width:768px){
+
+.logo h1{
+
+font-size:22px;
+
+}
+
+.hero-content h2{
+
+font-size:28px;
+
+}
+
+.ticket-name{
+
+font-size:20px;
+
+}
+
+.price{
+
+font-size:28px;
+
+}
+
+.ticket-footer{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:16px;
+
+}
+
+.checkout-bar{
+
+padding:16px;
+
+}
+
+.checkout-btn{
+
+padding:14px 18px;
+
+}
+
+}
+
+/* ===============================
+SELESAI CSS
+=============================== */
+
+@keyframes pulse{50%{opacity:.45}}</style>
+
+
+<style>
+</style>
+</head>
+<body>
+
+
+<div class="container"><!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header class="header">
+
+<div class="logo">
+
+<img src="logo.png" alt="Logo">
+
+<div>
+
+<h1>Sunset di Kebun</h1>
+
+<p>Official Package</p>
+
+</div>
+
+</div>
+
+<div class="country">
+
+🇮🇩 ID
+
+</div>
+
+</header>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section class="hero">
+
+<img src="banner.png" alt="Banner">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h2>Sunset People Package</h2>
+
+<p>
+
+Music Show with Green,
+Conservation and Culture Movement
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- JUDUL -->
+<!-- ========================= -->
+
+<section class="section-title">
+
+<h3>
+
+🎫 Sunset People Package
+
+</h3>
+
+<p>
+
+Pilih paket merchandise yang sudah termasuk Tiket Reguler Sunset di Kebun.
+
+</p>
+
+</section>
+
+<!-- ========================= -->
+<!-- GRID TIKET -->
+<!-- ========================= -->
+
+<div class="ticket-grid">
+
+<!-- ================================================= -->
+
+<div class="ticket-card">
+
+<div class="badge">
+
+BEST SELLER
+
+</div>
+
+<div class="ticket-header">
+
+<div class="ticket-name">
+
+Terra Bag + Tiket
+
+</div>
+
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
+
+ON SALE
+
+</div>
+
+</div>
+
+<div class="ticket-desc">
+
+Akses festival selama dua hari.
+
+Kuota terbatas.
+
+</div>
+
+<div class="ticket-footer">
+
+<div class="price">
+
+Rp439.000
+
+<small>
+
+Sudah termasuk tiket masuk
+
+</small>
+
+</div>
+
+<div>
+
+<button
+
+class="select-btn"
+
+id="s0"
+
+onclick="start(0)">
+
+Pilih Tiket
+
+</button>
+
+<div
+
+class="qty"
+
+id="q0">
+
+<button onclick="minus(0)">−</button>
+
+<div id="n0">
+
+1
+
+</div>
+
+<button onclick="plus(0)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+
+<div class="ticket-card">
+
+<div class="ticket-header">
+
+<div class="ticket-name">
+
+Satchel Bag + Tiket
+
+</div>
+
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
+
+READY
+
+</div>
+
+</div>
+
+<div class="ticket-desc">
+
+Akses festival selama dua hari.
+
+</div>
+
+<div class="ticket-footer">
+
+<div class="price">
+
+Rp464.000
+
+<small>
+
+Festival Pass
+
+</small>
+
+</div>
+
+<div>
+
+<button
+
+class="select-btn"
+
+id="s1"
+
+onclick="start(1)">
+
+Pilih Tiket
+
+</button>
+
+<div
+
+class="qty"
+
+id="q1">
+
+<button onclick="minus(1)">−</button>
+
+<div id="n1">
+
+1
+
+</div>
+
+<button onclick="plus(1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+ <!-- ================================================= -->
+
+<div class="ticket-card">
+
+<div class="ticket-header">
+
+<div class="ticket-name">
+
+Treverse Bag + Tiket
+
+</div>
+
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
+
+READY
+
+</div>
+
+</div>
+
+<div class="ticket-desc">
+
+Tiket reguler untuk 1 hari acara.
+Akses area festival.
+
+</div>
+
+<div class="ticket-footer">
+
+<div class="price">
+
+Rp549.000
+
+<small>
+
+Official Ticket
+
+</small>
+
+</div>
+
+<div>
+
+<button
+
+class="select-btn"
+
+id="s2"
+
+onclick="start(2)">
+
+Pilih Tiket
+
+</button>
+
+<div
+
+class="qty"
+
+id="q2">
+
+<button onclick="minus(2)">−</button>
+
+<div id="n2">
+
+1
+
+</div>
+
+<button onclick="plus(2)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+
+<div class="ticket-card">
+
+<div class="badge">
+
+PROMO
+
+</div>
+
+<div class="ticket-header">
+
+<div class="ticket-name">
+
+
+
+</div>
+
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
+
+LIMITED
+
+</div>
+
+</div>
+
+<div class="ticket-desc">
+
+Harga Rp175.000/orang.
+
+Minimal pembelian 2 tiket.
+
+</div>
+
+<div class="ticket-footer">
+
+<div class="price">
+
+Rp175.000
+
+<small>
+
+per orang
+
+</small>
+
+</div>
+
+<div>
+
+<button
+
+class="select-btn"
+
+id="s3"
+
+onclick="start(3)">
+
+Pilih Tiket
+
+</button>
+
+<div
+
+class="qty"
+
+id="q3">
+
+<button onclick="minus(3)">−</button>
+
+<div id="n3">
+
+1
+
+</div>
+
+<button onclick="plus(3)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+
+<div class="ticket-card">
+
+<div class="ticket-header">
+
+<div class="ticket-name">
+
+
+
+</div>
+
+<div style="margin-bottom:8px;color:#d32f2f;font-weight:700;animation:pulse 1s infinite">⚠️ Tiket Hampir Habis</div><div class="status">
+
+VERY LIMITED
+
+</div>
+
+</div>
+
+<div class="ticket-desc">
+
+Area .
+
+Akses jalur khusus.
+
+</div>
+
+<div class="ticket-footer">
+
+<div class="price">
+
+Rp450.000
+
+<small>
+
+ Access
+
+</small>
+
+</div>
+
+<div>
+
+<button
+
+class="select-btn"
+
+id="s4"
+
+onclick="start(4)">
+
+Pilih Tiket
+
+</button>
+
+<div
+
+class="qty"
+
+id="q4">
+
+<button onclick="minus(4)">−</button>
+
+<div id="n4">
+
+1
+
+</div>
+
+<button onclick="plus(4)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+
+<section class="info-box">
+
+<h3 class="info-title">
+
+Syarat & Ketentuan
+
+</h3>
+
+<ul class="info-list">
+
+<li>✅ Harga sudah termasuk tiket masuk Kebun Raya Bali.</li>
+
+<li>✅ Khusus pembelian melalui Shopee (Artch Official Shop).</li>
+
+<li>✅ Tiket yang diterima berbentuk Hard Copy/Fisik.</li>
+
+<li>✅ Promo berakhir 18 Juli 2026. Kuota terbatas.</li>
+
+</ul>
+
+</section>
+
+</div>
+
+<!-- ========================= -->
+
+<div class="checkout-bar">
+
+<div class="checkout-info">
+
+<span id="qtyText">
+
+0 Tiket Dipilih
+
+</span>
+
+<div
+
+id="totalText"
+
+class="total">
+
+Rp 0
+
+</div>
+
+</div>
+
+<button
+
+id="checkout"
+
+class="checkout-btn"
+
+disabled>
+
+BELI TIKET
+
+</button>
+
+</div>
+<script>
+
+const ticketList=[
+["Terra Bag + Tiket",439000],
+["Satchel Bag + Tiket",464000],
+["Treverse Bag + Tiket",549000]
+];
+
+const cart = {};
+
+ticketList.forEach(function(item){
+
+cart[item[0]] = 0;
+
+});
+
+const rupiah = value =>
+
+"Rp " +
+
+value.toLocaleString("id-ID");
+
+function start(index){
+
+if(index===3){
+cart[ticketList[index][0]] = 2;
+}else{
+cart[ticketList[index][0]] = 1;
+}
+
+document.getElementById("s"+index).style.display="none";
+
+document.getElementById("q"+index).style.display="flex";
+
+render();
+
+}
+
+function plus(index){
+
+cart[ticketList[index][0]]++;
+
+render();
+
+}
+
+function minus(index){
+
+if(index===3 && cart[ticketList[index][0]]<=2){
+cart[ticketList[index][0]]=0;
+document.getElementById("q"+index).style.display="none";
+document.getElementById("s"+index).style.display="inline-block";
+render();
+return;
+}
+
+cart[ticketList[index][0]]--;
+
+if(cart[ticketList[index][0]]<=0){
+
+cart[ticketList[index][0]]=0;
+
+document.getElementById("q"+index).style.display="none";
+
+document.getElementById("s"+index).style.display="inline-block";
+
+}
+
+render();
+
+}
+
+function render(){
+
+let total = 0;
+
+let jumlah = 0;
+
+const checkoutItems = [];
+
+ticketList.forEach(function(item,index){
+
+const qty = cart[item[0]];
+
+const harga = item[1];
+
+const counter = document.getElementById("n"+index);
+
+if(counter){
+
+counter.textContent = qty;
+
+}
+
+if(qty>0){
+
+jumlah += qty;
+
+total += qty * harga;
+
+checkoutItems.push({
+
+nama:item[0],
+
+qty:qty,
+
+harga:harga
+
+});
+
+}
+
+});
+
+document.getElementById("qtyText").textContent =
+
+jumlah + " Tiket Dipilih";
+
+document.getElementById("totalText").textContent =
+
+rupiah(total);
+
+document.getElementById("checkout").disabled =
+
+jumlah===0;
+
+localStorage.setItem(
+
+"checkout_items",
+
+JSON.stringify(checkoutItems)
+
+);
+
+localStorage.setItem(
+
+"jumlahTiket",
+
+jumlah
+
+);
+
+localStorage.setItem(
+
+"totalPembayaran",
+
+total
+
+);
+
+}
+
+document
+
+.getElementById("checkout")
+
+.onclick=function(){
+
+if(
+
+Object.values(cart).every(v=>v===0)
+
+){
+
+alert("Silakan pilih tiket terlebih dahulu.");
+
+return;
+
+}
+
+location.href="form.html";
+
+};
+
+
+const btn=document.getElementById('checkout');btn.classList.add('glow');
+let left=12,v=31,s=7200;
+setInterval(()=>{v=28+Math.floor(Math.random()*20);view.textContent='👀 '+v+' orang sedang melihat halaman';},5000);
+setInterval(()=>{if(left>3&&Math.random()<0.3)left--;document.getElementById('left').textContent='🔥 Tersisa '+left+' tiket lagi';},15000);
+setInterval(()=>{let h=Math.floor(s/3600),m=Math.floor((s%3600)/60),d=s%60;cd.textContent=[h,m,d].map(x=>String(x).padStart(2,'0')).join(':');if(s>0)s--;},1000);
+const names=['Andi','Rina','Budi','Salsa'];const cities=['Jakarta','Bandung','Surabaya','Bogor'];
+const live=document.createElement('div');live.className='live';document.body.appendChild(live);
+setInterval(()=>{live.textContent='🔴 '+names[Math.floor(Math.random()*names.length)]+' dari '+cities[Math.floor(Math.random()*cities.length)]+' baru membeli '+(1+Math.floor(Math.random()*2))+' tiket';},7000);
+
+</script>
+
+</body>
+
+</html>
