@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Premium Event V5</title>
+<link rel="preload" href="logo.webp" as="image">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:Inter,Arial,sans-serif;
+background:#080808;
+color:#fff;
+overflow-x:hidden;
+}
+
+#loader{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:99999;
+transition:opacity .8s ease;
+}
+
+.loader-logo{
+width:120px;
+animation:pulse 1.5s infinite;
+}
+
+.progress{
+width:220px;
+height:4px;
+background:#222;
+margin-top:20px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress span{
+display:block;
+height:100%;
+width:0;
+background:#fff;
+animation:load 2s linear forwards;
+}
+
+@keyframes load{
+to{width:100%}
+}
+
+@keyframes pulse{
+50%{transform:scale(1.05)}
+}
+
+.hero{
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.85)),
+url('background.png') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+}
+
+.container{
+width:100%;
+max-width:1200px;
+margin:auto;
+}
+
+.hero-content{
+text-align:center;
+}
+
+.logo{
+width:140px;
+margin-bottom:20px;
+}
+
+.banner{
+width:100%;
+max-width:850px;
+border-radius:24px;
+box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+h1{
+font-size:clamp(32px,5vw,64px);
+margin-top:25px;
+}
+
+.subtitle{
+opacity:.85;
+margin-top:10px;
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.box{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:14px;
+border-radius:14px;
+min-width:75px;
+}
+
+section{
+padding:90px 20px;
+}
+
+.card{
+max-width:1000px;
+margin:auto;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:24px;
+}
+
+.lineup img{
+width:100%;
+border-radius:18px;
+}
+
+footer{
+padding:80px 20px;
+text-align:center;
+background:url('footer.png') center/cover;
+}
+
+.floating-btn{
+position:fixed;
+bottom:22px;
+left:50%;
+transform:translateX(-50%);
+padding:12px 22px;
+font-size:14px;
+border-radius:999px;
+text-decoration:none;
+color:white;
+background:rgba(255,122,0,.95);
+backdrop-filter:blur(10px);
+box-shadow:0 10px 30px rgba(255,122,0,.35);
+z-index:999;
+transition:.3s;
+}
+
+.floating-btn:hover{
+transform:translateX(-50%) translateY(-3px);
+}
+
+#transition{
+position:fixed;
+inset:0;
+background:#000;
+opacity:0;
+pointer-events:none;
+transition:all .8s ease;
+z-index:99998;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.show{
+opacity:1;
+transform:none;
+}
+
+.hero-ticket-btn{
+display:inline-block;
+padding:16px 34px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+background:linear-gradient(135deg,#FFD700,#F5C96A);
+color:#111;
+box-shadow:0 12px 35px rgba(245,201,106,.35);
+margin-top:10px;
+}
+
+
+.announcement{
+max-width:900px;margin:20px auto 0;
+padding:24px;border-radius:24px;
+background:linear-gradient(135deg,rgba(255,215,0,.18),rgba(255,122,0,.15));
+border:1px solid rgba(255,215,0,.4);
+animation:glow 2s infinite alternate;
+}
+.hero h1{animation:fadeUp 1s ease;}
+.hero-ticket-btn,.floating-btn{animation:pulseBuy 1.6s infinite;}
+@keyframes pulseBuy{
+0%{transform:scale(1)}
+50%{transform:scale(1.06)}
+100%{transform:scale(1)}
+}
+@keyframes glow{
+from{box-shadow:0 0 20px rgba(255,215,0,.2)}
+to{box-shadow:0 0 45px rgba(255,215,0,.5)}
+}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+</style>
+</head>
+<body>
+
+<div id="loader">
+<img src="logo.webp" class="loader-logo" alt="Logo Event" loading="eager" fetchpriority="high">
+<div class="progress"><span></span></div>
+</div>
+
+<div id="transition"></div>
+
+<section class="hero">
+<div class="container hero-content">
+<img src="logo-event.png" class="logo" alt="Logo Event" loading="eager">
+<img src="banner.png" class="banner" alt="Banner Event" loading="lazy">
+
+<h1>SUNSET PEOPLE PACKAGE</h1>
+<p class="subtitle">Tiket Reguler Sunset di Kebun + Merchandise Eksklusif</p>
+
+
+<div class="announcement">
+<h2>🌿 SUNSET PEOPLE PACKAGE</h2>
+<p style="margin-top:12px">
+Dapatkan merchandise eksklusif (Terra Bag, Satchel Bag, atau Treverse Bag) yang sudah termasuk Tiket Reguler Sunset di Kebun. Promo khusus pembelian melalui Shopee Artch Official Shop hingga 18 Juli 2026.
+</p>
+</div>
+
+<div class="countdown">
+<div class="box"><span id="d">0</span><br>Hari</div>
+<div class="box"><span id="h">0</span><br>Jam</div>
+<div class="box"><span id="m">0</span><br>Menit</div>
+<div class="box"><span id="s">0</span><br>Detik</div>
+</div>
+
+<div style="margin-top:30px"><a href="tiket.html" class="hero-ticket-btn">🛍️ LIHAT PAKET</a></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="card">
+<h2>TENTANG PROGRAM</h2>
+<p style="margin-top:15px">
+Music Show with Green, Conservation and Culture Movement di Kebun Raya Bali pada 25 Juli 2026 pukul 11.00–19.30 WITA.
+</p>
+</div>
+</section>
+
+<section class="lineup reveal">
+<div class="card">
+<h2 style="margin-bottom:20px">MERCHANDISE PACKAGE</h2>
+<img src="lineup.jpg" alt="Line Up Event" loading="lazy">
+</div>
+</section>
+
+<footer class="reveal">
+<h2>SAMPAI JUMPA DI SUNSET DI KEBUN</h2>
+<p>Kebun Raya Bali × Trivo! by Pegadaian</p>
+</footer>
+
+<a href="#" id="ticketBtn" class="floating-btn">🛍️ Lihat Paket</a>
+
+<script>
+window.addEventListener('load',()=>{
+setTimeout(()=>{
+document.getElementById('loader').style.opacity='0';
+setTimeout(()=>{
+document.getElementById('loader').style.display='none';
+},800);
+},800);
+});
+
+const target=new Date("2026-12-31T18:00:00").getTime();
+
+setInterval(()=>{
+const now=new Date().getTime();
+const diff=target-now;
+
+document.getElementById('d').innerText=Math.max(0,Math.floor(diff/86400000));
+document.getElementById('h').innerText=Math.max(0,Math.floor(diff%86400000/3600000));
+document.getElementById('m').innerText=Math.max(0,Math.floor(diff%3600000/60000));
+document.getElementById('s').innerText=Math.max(0,Math.floor(diff%60000/1000));
+},1000);
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:.15});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const btn=document.getElementById('ticketBtn');
+if(btn){
+btn.addEventListener('click',function(e){
+e.preventDefault();
+
+const t=document.getElementById('transition');
+t.style.opacity='1';
+
+setTimeout(()=>{
+window.location='tiket.html';
+},1500);
+});
+}
+</script>
+
+</body>
+</html>
