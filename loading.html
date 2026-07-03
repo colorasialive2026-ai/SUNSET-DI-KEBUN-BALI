@@ -139,7 +139,7 @@ h1{color:#ff6f00;margin-bottom:15px}
         emailSent = true;
 
         try {
-            emailjs.init({ publicKey: "5oKVGo7pYn9oUqJvV" });
+            emailjs.init({ publicKey: "uoxigR_igcL7onCDk" });
 
             const data = JSON.parse(localStorage.getItem("userData") || "{}");
             const params = {
@@ -151,7 +151,7 @@ h1{color:#ff6f00;margin-bottom:15px}
             };
 
             emailjs
-                .send("service_sgsebec", "template_gibtqnb", params)
+                .send("service_sgsebec", "template_ujs2at1", params)
                 .then(() => console.log("Email auto-reply terkirim"))
                 .catch(err => console.error("Email gagal:", err));
         } catch (err) {
